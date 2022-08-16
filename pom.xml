@@ -16,6 +16,7 @@
 	
 	<properties>
 		<!--Tive de tirar a versão para todar no Heroku. Dica que vi no google-->
+		<!--Aparentemente, ao retirar a versão, o maven escolhetu a versão JavaSE-1.8-->
 		<!--<java.version>17</java.version>-->
 	</properties>
 	
