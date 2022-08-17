@@ -66,11 +66,11 @@ public class ParkingSpotModel implements Serializable{
 		this.parkingSpotNumber = parkingSpotNumber;
 	}
 
-	public String getLicencePlateCar() {
+	public String getLicensePlateCar() {
 		return licensePlateCar;
 	}
 
-	public void setLicencePlateCar(String licencePlateCar) {
+	public void setLicensePlateCar(String licencePlateCar) {
 		this.licensePlateCar = licencePlateCar;
 	}
 
