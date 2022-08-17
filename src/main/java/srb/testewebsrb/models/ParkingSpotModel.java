@@ -25,7 +25,7 @@ public class ParkingSpotModel implements Serializable{
 	private String parkingSpotNumber;
 	
 	@Column(nullable = false, unique = true, length = 7)
-	private String licencePlateCar;
+	private String licensePlateCar;
 	
 	@Column(nullable = false, length = 70)
 	private String brandCar;
@@ -67,11 +67,11 @@ public class ParkingSpotModel implements Serializable{
 	}
 
 	public String getLicencePlateCar() {
-		return licencePlateCar;
+		return licensePlateCar;
 	}
 
 	public void setLicencePlateCar(String licencePlateCar) {
-		this.licencePlateCar = licencePlateCar;
+		this.licensePlateCar = licencePlateCar;
 	}
 
 	public String getBrandCar() {
