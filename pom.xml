@@ -21,7 +21,7 @@
 		    reservada var só suportada a partir da versão 10. Não adiantou. Mudei na
 		    configuração da JRE do projeto para JavaSE-11. Java 10 e depois 9 e de volta ao 1.8 -->
 		<!-- funcionou com a configuração em 1.8 e sem o var. Talvez sem o var funcione com uma versão maior -->
-		<!--<java.version>11</java.version>-->
+		<java.version>14</java.version>
 	</properties>
 	
 	<dependencies>
@@ -52,6 +52,7 @@
 		    <!-- O BD no Heroku é PG versão 14.4. Parece não haver pom para esta versão. -->
 		    <!-- Mas como ao por a versão última 42.4.1, o Eclipse informa que está fazendo um overrinding com a versão 42.3.6-->
 		    <!--<version>42.4.1</version>-->
+      		<scope>runtime</scope>
 		</dependency>
 		
 		<dependency>
