@@ -46,7 +46,7 @@ public class ParkingSpotController {
 	
 	@PostMapping
 	public ResponseEntity<Object> saveParkingSpot(@RequestBody @Valid ParkingSpotDto parkingSpotDto){
-		var parkingSpotModel = new ParkingSpotModel(); // parece que "var" não é necessário
+		ParkingSpotModel parkingSpotModel = new ParkingSpotModel(); // parece que "var" não é necessário
 		BeanUtils.copyProperties(parkingSpotDto, parkingSpotModel);
 		parkingSpotModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("UTC")));
 		return ResponseEntity.status(HttpStatus.CREATED).body(parkingSpotService.save(parkingSpotModel));
