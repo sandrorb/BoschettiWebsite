@@ -19,7 +19,7 @@
 		<!--Aparentemente, ao retirar a versão, o maven escolhetu a versão JavaSE-1.8-->
 		<!--Mudei para 11 para ver se funciona, já que o projeto usa a palavra
 		    reservada var só suportada a partir da versão 10. Não adiantou. Mudei na
-		    configuração da JRE do projeto para JavaSE-11. Java 10 e depois 9 -->
+		    configuração da JRE do projeto para JavaSE-11. Java 10 e depois 9 e de volta ao 1.8 -->
 		<!--<java.version>11</java.version>-->
 	</properties>
 	
