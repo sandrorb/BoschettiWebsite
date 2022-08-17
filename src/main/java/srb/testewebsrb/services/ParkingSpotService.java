@@ -1,8 +1,11 @@
 package srb.testewebsrb.services;
 
+import javax.transaction.Transactional;
+
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import srb.testewebsrb.models.ParkingSpotModel;
 import srb.testewebsrb.repositories.ParkingSpotRepository;
 
 /*Inicialmente esta classe não fará muita coisa e será apenas uma 
@@ -31,5 +34,12 @@ public class ParkingSpotService {
 	}
 	
 	
+/* Importante a anatação Transactional para métodos destrutivos
+ * para que haja um rollback em caso de algum problema	
+ */
+	@Transactional
+	public ParkingSpotModel save(ParkingSpotModel parkingSpotModel) {
+		return parkingSpotRepository.save(parkingSpotModel);
+	}
 
 }
