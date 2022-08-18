@@ -2,6 +2,7 @@ package srb.testewebsrb.controllers;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -9,6 +10,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,6 +48,12 @@ public class ParkingSpotController {
  * O Valid vai validar os dados chegados conforme anotações no Dto. Se algo der errado aqui
  * o cliente já recebe um Bad Request */
 	
+/*
+ * Ao usar o método abaixo (POST) com o postman instalado no win, postgres local e sistema
+ * rodando localmente, tudo funciona. Mas o postman recebe mensagem de "erro interno do 
+ * servidor quando tenta enviar dados para a aplicação rodando no Heroku.
+ */
+	
 	@PostMapping
 	public ResponseEntity<Object> saveParkingSpot(@RequestBody @Valid ParkingSpotDto parkingSpotDto){
 		
@@ -69,6 +77,13 @@ public class ParkingSpotController {
 		BeanUtils.copyProperties(parkingSpotDto, parkingSpotModel);
 		parkingSpotModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("UTC")));
 		return ResponseEntity.status(HttpStatus.CREATED).body(parkingSpotService.save(parkingSpotModel));
+	}
+	
+	
+	
+	@GetMapping
+	public ResponseEntity<List <ParkingSpotModel>> getAllParkingSpots(){
+		return ResponseEntity.status(HttpStatus.OK).body(parkingSpotService.findAll());
 	}
 
 }
