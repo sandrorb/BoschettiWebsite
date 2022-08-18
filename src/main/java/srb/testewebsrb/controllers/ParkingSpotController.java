@@ -38,10 +38,12 @@ public class ParkingSpotController {
 	}
 	
 	
-/* a linha com a palavra reservada var só é possível com Java 10 ou posterior */
-/* Object é usado pois futuramente poderá retornar outros objetos */
-/* Parece que o RequestBody é para que os dados venha como JSON para construir o parkingSpotDto */
-/* O Valid vai validar os dados chegados conforme anotações no Dto. Se algo der errado aqui
+/* a linha com a palavra reservada "var" só é possível com Java 10 ou posterior. Mas,
+ * mesmo usando JavaSE-14 na configuração JRE System Library, o projeto não funciona
+ * no Heroku se tiver "var".
+ * Object é usado pois futuramente poderá retornar outros objetos.
+ * Parece que o RequestBody é para que os dados venha como JSON para construir o parkingSpotDto.
+ * O Valid vai validar os dados chegados conforme anotações no Dto. Se algo der errado aqui
  * o cliente já recebe um Bad Request */
 	
 	@PostMapping
