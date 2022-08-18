@@ -41,5 +41,21 @@ public class ParkingSpotService {
 	public ParkingSpotModel save(ParkingSpotModel parkingSpotModel) {
 		return parkingSpotRepository.save(parkingSpotModel);
 	}
+	
+	
+	/* Este é um método um pouco mais "customizado" e não é um método
+	 * "pronto" como o save(). Ele deverá ser declarado dentro de Repository
+	 * antes de ser chamado no aqui no Service */
+	public boolean existsByLicensePlateCar(String licensePlateCar) {
+		return parkingSpotRepository.existsByLicensePlateCar(licensePlateCar);
+	}
+	
+	public boolean existsByParkingSpotNumber(String parkingSpotNumber) {
+		return parkingSpotRepository.existsByParkingSpotNumber(parkingSpotNumber);
+	}
+	
+	public boolean existsByApartmentAndBlock(String apartment, String block) {
+		return parkingSpotRepository.existsByApartmentAndBlock(apartment, block);
+	}
 
 }
