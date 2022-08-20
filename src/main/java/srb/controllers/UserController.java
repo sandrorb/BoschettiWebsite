@@ -1,5 +1,7 @@
 package srb.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,6 +41,13 @@ public class UserController {
 	public ResponseEntity<UserModel> salvar(@RequestBody UserModel user){
 		UserModel usuario = userRepository.save(user);
 		return new ResponseEntity<UserModel>(usuario, HttpStatus.CREATED);
+	}
+	
+	@PostMapping(value = "/buscartodos")
+	@ResponseBody
+	public ResponseEntity<List<UserModel>> buscarTodos(){
+		List<UserModel> usuarios = userRepository.findAll();
+		return new ResponseEntity<List<UserModel>>(usuarios, HttpStatus.CREATED);
 	}
 
 }

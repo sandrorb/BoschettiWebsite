@@ -10,6 +10,9 @@
     	        background-color: #1F618D; width: 80%; border-radius: 10px;
     	        padding: 20px; text-align: center}
     	label {color: white}
+    	#id {background-color: gray}
+    	#tabelaresultados {color: white; width:50%;  margin-left: auto; margin-right: auto;}
+    	table, th, td { border: 1px solid white; border-collapse: collapse;}
     </style>    
   </head>
   <body>
@@ -23,6 +26,16 @@
 		  <input type="text" id="nome" name="nome" value="Sandro"><br><br>
 		</form>
 		<button type="button" class="btn btn-light" onclick="salvar()">Salvar</button> <br>
+		<hr>
+		<button type="button" class="btn btn-light" onclick="buscarTodos()">Buscar Todos</button> <br>
+		
+		<br>
+		
+		<div id="resultados">
+			<table id="tabelaresultados">
+			</table>
+		</div>
+		
 	</div>
 	
 	
@@ -37,15 +50,34 @@
 	        	url: "salvar",
 	        	data: JSON.stringify( {id : id, nome : nome} ),
 	        	contentType: "application/json; charset=utf-8",
-	        	
 	        	success: function(response){
 	        		/* alert("Executado!"); */
 	        	}
-	        	
 	        }).fail(function(xhr, status, errorThrown){
 	        	alert("Erro ao salvar dados: " + xhr.responseText);
 	           }); 
  	   	
+		}
+		
+		function buscarTodos(){
+			$.ajax({
+	        	method: "POST",
+	        	url: "buscartodos",
+	        	contentType: "application/json; charset=utf-8",
+	        	success: function(response){
+	        		//$("#resultados").html(JSON.stringify(response));
+	        		$('#tabelaresultados').text("");
+	        		$('#tabelaresultados').append("<thead><tr><th>Id</th><th>Nome</th></tr></thead>");
+					$.each(response, function (key, value) {
+						$('#tabelaresultados').append("<tr>\
+									<td>"+value.id+"</td>\
+									<td>"+value.nome+"</td>\
+									</tr>");
+					})
+	        	}
+	        }).fail(function(xhr, status, errorThrown){
+	        	alert("Erro ao salvar dados: " + xhr.responseText);
+	           }); 
 		}
 	</script>
 
