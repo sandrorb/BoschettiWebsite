@@ -1,11 +1,11 @@
-package srb.testewebsrb.repositories;
+package srb.repositories;
 
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import srb.testewebsrb.models.ParkingSpotModel;
+import srb.models.ParkingSpotModel;
 
 
 /*O JpaRepository já nos traz uma série de métodos prontos de acesso a BD*/

@@ -1,4 +1,4 @@
-package srb.testewebsrb.models;
+package srb.models;
 
 import java.io.Serializable;
 

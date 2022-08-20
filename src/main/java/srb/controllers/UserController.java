@@ -1,4 +1,4 @@
-package srb.testewebsrb.controllers;
+package srb.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import srb.testewebsrb.models.UserModel;
-import srb.testewebsrb.repositories.UserRepository;
+import srb.models.UserModel;
+import srb.repositories.UserRepository;
 
 @RestController
 public class UserController {

@@ -1,4 +1,4 @@
-package srb.testewebsrb.controllers;
+package srb.controllers;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -19,12 +19,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import srb.testewebsrb.dtos.ParkingSpotDto;
-import srb.testewebsrb.dtos.UserDto;
-import srb.testewebsrb.models.ParkingSpotModel;
-import srb.testewebsrb.models.UserModel;
-import srb.testewebsrb.repositories.UserRepository;
-import srb.testewebsrb.services.ParkingSpotService;
+import srb.dtos.ParkingSpotDto;
+import srb.dtos.UserDto;
+import srb.models.ParkingSpotModel;
+import srb.models.UserModel;
+import srb.repositories.UserRepository;
+import srb.services.ParkingSpotService;
 
 /* Esta classe é um Bean do Spring e é a mais próxima
  * ao frontend.

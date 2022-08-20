@@ -1,4 +1,4 @@
-package srb.testewebsrb.dtos;
+package srb.dtos;
 
 import javax.validation.constraints.NotBlank;
 

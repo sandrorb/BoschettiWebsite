@@ -1,4 +1,4 @@
-package srb.testewebsrb.services;
+package srb.services;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import javax.transaction.Transactional;
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import srb.testewebsrb.models.ParkingSpotModel;
-import srb.testewebsrb.repositories.ParkingSpotRepository;
+import srb.models.ParkingSpotModel;
+import srb.repositories.ParkingSpotRepository;
 
 /*Inicialmente esta classe não fará muita coisa e será apenas uma 
  * intermediária. Mas aqui é onde ficam regras de negócios */

@@ -1,37 +1,62 @@
-package srb.testewebsrb.dtos;
+package srb.models;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
-public class ParkingSpotDto {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TB_PARKING_SPOT")
+public class ParkingSpotModel implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	
-	@NotBlank
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private UUID id;
+	
+	@Column(nullable = false, unique = true, length = 10)
 	private String parkingSpotNumber;
 	
-	@NotBlank
-	@Size(max = 7)
+	@Column(nullable = false, unique = true, length = 7)
 	private String licensePlateCar;
 	
-	@NotBlank
+	@Column(nullable = false, length = 70)
 	private String brandCar;
 	
-	@NotBlank
+	@Column(nullable = false, length = 70)
 	private String modelCar;
 	
-	@NotBlank
+	@Column(nullable = false, length = 70)
 	private String colorCar;
 	
-	@NotBlank
+	@Column(nullable = false)
+	private LocalDateTime registrationDate;
+	
+	@Column(nullable = false, length = 130)
 	private String responsibleName;
 	
-	@NotBlank
+	@Column(nullable = false, length = 30)
 	private String apartment;
 	
-	@NotBlank
+	@Column(nullable = false, length = 30)
 	private String block;
 	
 	
-	
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
 
 	public String getParkingSpotNumber() {
 		return parkingSpotNumber;
@@ -73,6 +98,14 @@ public class ParkingSpotDto {
 		this.colorCar = colorCar;
 	}
 
+	public LocalDateTime getRegistrationDate() {
+		return registrationDate;
+	}
+
+	public void setRegistrationDate(LocalDateTime registrationDate) {
+		this.registrationDate = registrationDate;
+	}
+
 	public String getResponsibleName() {
 		return responsibleName;
 	}
@@ -96,7 +129,13 @@ public class ParkingSpotDto {
 	public void setBlock(String block) {
 		this.block = block;
 	}
-	
-	
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 }
+
+
+
+
