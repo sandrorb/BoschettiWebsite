@@ -37,16 +37,8 @@ public class UserController {
 	@PostMapping(value = "/salvar")
 	@ResponseBody
 	public ResponseEntity<UserModel> salvar(@RequestBody UserModel user){
-		System.out.println("xxxxxxxxxxxxxxxx");
 		UserModel usuario = userRepository.save(user);
 		return new ResponseEntity<UserModel>(usuario, HttpStatus.CREATED);
 	}
-	
-//	@PostMapping(value = "salvar")
-//	@ResponseBody
-//	public ResponseEntity<String> salvar(){
-//		System.out.println("xxxxxxxxxxxxxxxx");
-//		return new ResponseEntity<String>("SrB ok", HttpStatus.CREATED);
-//	}	
 
 }
