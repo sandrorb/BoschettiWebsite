@@ -22,14 +22,14 @@
 	<div id="form">
 		<form>
 		  <br>
-		  <label>Número de Identificação (id):</label><br>
+		  <label>Número de Identificação</label><br>
 		  <input type="text" id="id" name="id" value="" readonly="readonly"><br><br>
-		  <label>Nome do Usuário:</label><br>
-		  <input type="text" id="nome" name="nome" value="Sandro"><br><br>
+		  <label>Nome do Usuário</label><br>
+		  <input type="text" id="nome" name="nome" value=""><br><br>
 		</form>
 		<button type="button" class="btn btn-light" onclick="salvar()">Salvar</button>
-		<button type="button" class="btn btn-light" onclick="">Novo</button> 
-		<button type="button" class="btn btn-light" onclick="buscarTodos()">Buscar Todos</button>
+		<button type="button" class="btn btn-light" onclick="novo()">Novo</button> 
+		<!-- <button type="button" class="btn btn-light" onclick="buscarTodos()">Buscar Todos</button> -->
 		<br>
 		<hr>
 		
@@ -37,7 +37,7 @@
 		
 		<div id="resultados">
 			<table id="tabelaresultados">
-				<thead><tr><th>Id</th><th>Nome</th><th>Apagar</th></tr></thead>
+				<thead><tr><th>Id</th><th>Nome do Usuário</th><th>Apagar</th></tr></thead>
 				<tbody>
 				</tbody>
 			</table>
@@ -47,6 +47,11 @@
 	
 	
 	<script type="text/javascript">
+	
+	function novo(){
+		$("#id").val("");
+		$("#nome").val("");
+	}
 	
 	function deletar(id){
 		        
@@ -74,9 +79,8 @@
 	        	data: JSON.stringify( {id : id, nome : nome} ),
 	        	contentType: "application/json; charset=utf-8",
 	        	success: function(response){
-	        		/* alert("Executado!"); */
-	        		$("#id").val(response.id);
-	        		buscarTodos();
+		        		$("#id").val(response.id);
+		        		buscarTodos();
 	        	}
 	        }).fail(function(xhr, status, errorThrown){
 	        	alert("Erro ao salvar dados: " + xhr.responseText);

@@ -38,12 +38,23 @@ public class UserController {
 		return nome;
 	}
 	
+//	@PostMapping(value = "/salvar")
+//	@ResponseBody
+//	public ResponseEntity<UserModel> salvar(@RequestBody UserModel user){
+//		UserModel usuario = userRepository.save(user);
+//		return new ResponseEntity<UserModel>(usuario, HttpStatus.CREATED);
+//	}
+	
 	@PostMapping(value = "/salvar")
 	@ResponseBody
-	public ResponseEntity<UserModel> salvar(@RequestBody UserModel user){
-		UserModel usuario = userRepository.save(user);
-		return new ResponseEntity<UserModel>(usuario, HttpStatus.CREATED);
-	}
+	public ResponseEntity<Object> salvar(@RequestBody UserModel user){
+		if(user.getNome().trim().equals("")) {
+			return new ResponseEntity<Object>("O nome não pode ser vazio", HttpStatus.CREATED);
+		}else {
+			UserModel usuario = userRepository.save(user);
+			return new ResponseEntity<Object>(usuario, HttpStatus.CREATED);
+		}
+	}	
 	
 	@PostMapping(value = "/buscartodos")
 	@ResponseBody
