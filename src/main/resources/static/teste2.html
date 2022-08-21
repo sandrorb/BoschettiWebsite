@@ -9,9 +9,10 @@
     <style>
     	#form {margin: auto; margin-top: 5%;
     	        background-color: #1F618D; width: 80%; border-radius: 10px;
-    	        padding: 20px; text-align: center}
+    	        padding: 20px; text-align: center; padding-top: 5px; padding-bottom: 30px}
     	label {color: white}
-    	#id {background-color: gray}
+    	#id {background-color: #A9A9A9; width: 100px; text-align: center}
+    	#nome {width: 200px; text-align: center}
     	#tabelaresultados {color: white; width:50%;  margin-left: auto; margin-right: auto;}
     	table, th, td { border: 1px solid white; border-collapse: collapse;}
     </style>    
@@ -28,16 +29,14 @@
 		  <input type="text" id="nome" name="nome" value=""><br><br>
 		</form>
 		<button type="button" class="btn btn-light" onclick="salvar()">Salvar</button>
-		<button type="button" class="btn btn-light" onclick="novo()">Novo</button> 
+		<button type="button" class="btn btn-primary" onclick="novo()">Novo</button> 
 		<!-- <button type="button" class="btn btn-light" onclick="buscarTodos()">Buscar Todos</button> -->
 		<br>
 		<hr>
 		
-		<br>
-		
 		<div id="resultados">
 			<table id="tabelaresultados">
-				<thead><tr><th>Id</th><th>Nome do Usuário</th><th>Apagar</th></tr></thead>
+				<thead><tr><th>Id</th><th>Nome do Usuário</th><th>Deleção</th></tr></thead>
 				<tbody>
 				</tbody>
 			</table>
@@ -101,7 +100,7 @@
 					$('#tabelaresultados > tbody > tr').remove();
 	        		for (var i=0; i<response.length; i++){
 	        			$('#tabelaresultados > tbody').append(
-	        				'<tr id="'+response[i].id+'"><td>'+response[i].id+'</td><td>'+response[i].nome+'</td><td> <button type="button" class="btn btn-light" onclick="deletar('+response[i].id+')">Deletar</button>  </td></tr>'
+	        				'<tr id="'+response[i].id+'"><td>'+response[i].id+'</td><td>'+response[i].nome+'</td><td> <button type="button" class="btn btn-danger" onclick="deletar('+response[i].id+')">Deletar</button>  </td></tr>'
 	        			);
 	        		}
 	        	}
