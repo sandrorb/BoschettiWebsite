@@ -106,7 +106,7 @@
 					$('#tabelaresultados > tbody > tr').remove();
 	        		for (var i=0; i<response.length; i++){
 	        			$('#tabelaresultados > tbody').append(
-	        				'<tr id="'+response[i].id+'"><td>'+response[i].id+'</td><td>'+response[i].nome+'</td><td> <button type="button" class="btn btn-danger buttondeletar" onclick="deletar('+response[i].id+')">Deletar</button>  </td></tr>'
+	        				'<tr id="'+response[i].id+'"><td>'+response[i].id+'</td><td class="tdnome">'+response[i].nome+'</td><td> <button type="button" class="btn btn-danger buttondeletar" onclick="deletar('+response[i].id+')">Deletar</button>  </td></tr>'
 	        			);
 	        		}
 	        	}
