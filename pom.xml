@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>srb</groupId>
-	<artifactId>testewebsrb</artifactId>
+	<artifactId>boschettiportifolio</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>testewebsrb</name>
-	<description>Demo project for Spring Boot</description>
+	<name>BoschettiWebsite</name>
+	<description>Sandro Boschetti - Projeto Portifólio</description>
 	
 	<properties>
 		<!--Tive de tirar a versão para todar no Heroku. Dica que vi no google-->
