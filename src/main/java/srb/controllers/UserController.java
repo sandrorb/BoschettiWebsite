@@ -1,5 +1,7 @@
 package srb.controllers;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +31,13 @@ public class UserController {
 		this.userRepository = userRepository;
 	}
 	
-	@RequestMapping(value = "/user/{nome}", method = RequestMethod.GET )
+	@RequestMapping(value = "/user/{nome}", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	public String salvarUser(@PathVariable String nome) {
 		UserModel user = new UserModel();
 		user.setNome(nome);
+		Date date = new Date();
+		user.setDate(date);
 		userRepository.save(user);
 		return nome;
 	}
@@ -51,6 +55,8 @@ public class UserController {
 		if(user.getNome().trim().equals("")) {
 			return new ResponseEntity<Object>("O nome não pode ser vazio", HttpStatus.CREATED);
 		}else {
+			Date date = new Date();
+			user.setDate(date);
 			UserModel usuario = userRepository.save(user);
 			return new ResponseEntity<Object>(usuario, HttpStatus.CREATED);
 		}

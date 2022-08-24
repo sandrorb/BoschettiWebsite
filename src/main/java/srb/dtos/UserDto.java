@@ -1,11 +1,23 @@
 package srb.dtos;
 
+import java.util.Date;
+
 import javax.validation.constraints.NotBlank;
 
 public class UserDto {
 
 	@NotBlank
 	private String nome;
+	
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	private Date date;
 
 	public String getNome() {
 		return nome;

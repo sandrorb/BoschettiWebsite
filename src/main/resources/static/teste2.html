@@ -35,7 +35,7 @@
 
 		<div id="resultados">
 			<table id="tabelaresultados" >
-				<thead><tr><th>Id</th><th>Nome do Usuário</th><th>Deleção</th></tr></thead>
+				<thead><tr><th>Id</th><th>Nome do Usuário</th> <th>Data de Cadastro</th>  <th>Deleção</th></tr></thead>
 				<tbody>
 				</tbody>
 			</table>
@@ -100,13 +100,14 @@
 	        	contentType: "application/json; charset=utf-8",
 	        	success: function(response){
 	        		//$("#resultados").html(JSON.stringify(response));
-
 	        		//$('#tabelaresultados').text("");
-	        		//$('#tabelaresultados').append("<thead><tr><th>Id</th><th>Nome</th><th>Apagar</th></tr></thead>");
+	        		//$('#tabelaresultados').append("<thead><tr><th>Id</th><th>Nome</th><th>Apagar</th></tr></thead>");\
 					$('#tabelaresultados > tbody > tr').remove();
 	        		for (var i=0; i<response.length; i++){
+	           			var date = response[i].date;
+	        			if (date === null) {date = "";} 
 	        			$('#tabelaresultados > tbody').append(
-	        				'<tr id="'+response[i].id+'"><td>'+response[i].id+'</td><td class="tdnome">'+response[i].nome+'</td><td> <button type="button" class="btn btn-danger buttondeletar" onclick="deletar('+response[i].id+')">Deletar</button>  </td></tr>'
+	        				'<tr id="'+response[i].id+'"><td>'+response[i].id+'</td><td class="tdnome">'+response[i].nome+'</td> <td>'+date+'</td> <td> <button type="button" class="btn btn-danger buttondeletar" onclick="deletar('+response[i].id+')">Deletar</button>  </td></tr>'
 	        			);
 	        		}
 	        	}
