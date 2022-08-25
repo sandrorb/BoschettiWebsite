@@ -72,7 +72,6 @@ public class UserController {
 	@DeleteMapping(value = "delete")
 	@ResponseBody
 	public ResponseEntity<String> delete(@RequestParam Long id){
-		System.out.println("O parâmetro id passado é: " + id);
 		userRepository.deleteById(id);
 		return new ResponseEntity<String>("Usuário deletado com sucesso", HttpStatus.OK);
 	}
