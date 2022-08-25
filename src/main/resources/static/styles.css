@@ -20,11 +20,11 @@ input {border-radius: 6px;}
 
 	
 /* Definição da Tabela que Mostra os Resultados */
-#tabelaresultados {color: white; width:90%; border: 1px solid gray;
+#tabelaresultados {color: white; border: 1px solid gray; max-width: 80%; min-width: 40%;
 				   margin-left: auto; margin-right: auto; margin-top: 20px;}
 th, td{border-bottom: 1px solid gray; border-top: 1px solid gray; border-collapse: collapse;}
 th {background-color: #000050; color: #A9A9A9;}
-td {background-color: #191970; color: #CCCCCC;}
+td {background-color: #191970; color: #CCCCCC; padding: 1px 10px;}
 .tdnome {text-align: left; padding: 0px 10px;}
 
 
