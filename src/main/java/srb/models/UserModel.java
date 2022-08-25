@@ -25,7 +25,8 @@ public class UserModel implements Serializable{
 	@NotNull
 	private String nome;
 	
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone="GMT-3")
 	private Date date;
 
 	public Long getId() {
