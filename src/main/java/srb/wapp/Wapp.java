@@ -51,21 +51,22 @@ public class Wapp {
 	@PostMapping(value = "/teste")
 	public String teste(@RequestBody WmsgModel wmsgModel) {
 		
-		Twilio.init(wmsgModel.getAccountSid(), wmsgModel.getAuthToken());	
+		System.out.println("XXXXXXXXXXXXXXX");
+//		Twilio.init(wmsgModel.getAccountSid(), wmsgModel.getAuthToken());	
+//		
+//		String phoneNumberOriginStr = "whatsapp:" + wmsgModel.getPhoneNumberOriginStr();
+//		String phoneNumberDestStr = "whatsapp:" + wmsgModel.getPhoneNumberDestStr();
+//		
+//		PhoneNumber phoneNumberOrigin = new PhoneNumber(phoneNumberOriginStr);
+//		PhoneNumber phoneNumberDest = new PhoneNumber(phoneNumberDestStr);
+//	
+//		String body = "SrB: Isso é um teste";
+//		 
+//		Message msg = Message.creator( phoneNumberOrigin, phoneNumberDest, body).create();
+//		
+//		System.out.println(msg.getSid());
 		
-		String phoneNumberOriginStr = "whatsapp:" + wmsgModel.getPhoneNumberOriginStr();
-		String phoneNumberDestStr = "whatsapp:" + wmsgModel.getPhoneNumberDestStr();
-		
-		PhoneNumber phoneNumberOrigin = new PhoneNumber(phoneNumberOriginStr);
-		PhoneNumber phoneNumberDest = new PhoneNumber(phoneNumberDestStr);
-	
-		String body = "SrB: Isso é um teste";
-		 
-		Message msg = Message.creator( phoneNumberOrigin, phoneNumberDest, body).create();
-		
-		System.out.println(msg.getSid());
-		
-		return "SrB: sucesso!";	
+		return wmsgModel.getAccountSid();	
 	}
 	
 	
