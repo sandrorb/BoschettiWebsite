@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.twilio.Twilio;
+import com.twilio.exception.ApiException;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
 
@@ -73,12 +74,23 @@ public class Wapp {
 		 
 		sb.append("Antes do envio propriamente dito, mas que estã comentado no momento\n\n");
 		
-		//Message msg = Message.creator( phoneNumberOrigin, phoneNumberDest, body).create();
+		Message msg = null;
+		
+		try {
+			msg = Message.creator( phoneNumberOrigin, phoneNumberDest, body).create();
+		}catch(ApiException e) {
+			sb.append("ERRO!!!\n");
+			sb.append(e.toString() + "\n");
+		}
 		
 //		System.out.println(msg.getSid());
 		
 		sb.append("phoneNumberOrigin = " + phoneNumberOrigin.toString() + "\n");
 		sb.append("phoneNumberDest = " + phoneNumberDest.toString() + "\n");
+		
+		if (msg != null) {
+			sb.append("Mensagem: " + msg.toString() + "\n");
+		}
 		
 		return sb.toString();	
 	}
