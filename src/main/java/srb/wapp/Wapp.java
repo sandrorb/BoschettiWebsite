@@ -12,8 +12,10 @@ public class Wapp {
 		String numTelefone = From.substring(From.indexOf(":")+1);
 		StringBuilder sb = new StringBuilder();
 		sb.append("Olá, " + numTelefone + "!\n");
+		sb.append("Esta é uma mensagem automática criada e enviada por um webservice escrito em Java por Sandro Boschetti\n");
 		sb.append("Você digitou: " + Body);
 		return sb.toString();
 	}
 
 }
+
