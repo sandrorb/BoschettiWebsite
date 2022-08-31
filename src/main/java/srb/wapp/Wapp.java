@@ -51,32 +51,36 @@ public class Wapp {
 	@PostMapping(value = "/teste")
 	public String teste(@RequestBody WmsgModel wmsgModel) {
 		
-		String resposta = "Antes do init";
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("Antes do Twilio.init()\n");
 		
 		Twilio.init(wmsgModel.getAccountSid(), wmsgModel.getAuthToken());
 		
-		resposta = "Após o init";
-		
+		sb.append("Após o Twilio.init()\n");
 		
 		String phoneNumberOriginStr = "whatsapp:" + wmsgModel.getPhoneNumberOriginStr();
 		String phoneNumberDestStr = "whatsapp:" + wmsgModel.getPhoneNumberDestStr();
 		
-		resposta = "Após a adição do prefixo whatsapp:";
+		sb.append("Após a adição do prefixo whatsapp:\n");
 		
 		PhoneNumber phoneNumberOrigin = new PhoneNumber(phoneNumberOriginStr);
 		PhoneNumber phoneNumberDest = new PhoneNumber(phoneNumberDestStr);
 	
+		sb.append("Após a transforação do números de telefone de string para PhoneNumber.\n");
+		
 		String body = "SrB: Isso é um teste";
 		 
-		resposta = "Antes do envio";
+		sb.append("Antes do envio propriamente dito, mas que estã comentado no momento\n\n");
 		
-		Message msg = Message.creator( phoneNumberOrigin, phoneNumberDest, body).create();
+		//Message msg = Message.creator( phoneNumberOrigin, phoneNumberDest, body).create();
 		
-		System.out.println(msg.getSid());
+//		System.out.println(msg.getSid());
 		
-		resposta = "Após do envio";
+		sb.append("phoneNumberOrigin = " + phoneNumberOrigin.toString() + "\n");
+		sb.append("phoneNumberDest = " + phoneNumberDest.toString() + "\n");
 		
-		return resposta;	
+		return sb.toString();	
 	}
 	
 	
