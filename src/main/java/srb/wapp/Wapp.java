@@ -57,18 +57,24 @@ public class Wapp {
 		
 		resposta = "Após o init";
 		
-//		
-//		String phoneNumberOriginStr = "whatsapp:" + wmsgModel.getPhoneNumberOriginStr();
-//		String phoneNumberDestStr = "whatsapp:" + wmsgModel.getPhoneNumberDestStr();
-//		
-//		PhoneNumber phoneNumberOrigin = new PhoneNumber(phoneNumberOriginStr);
-//		PhoneNumber phoneNumberDest = new PhoneNumber(phoneNumberDestStr);
-//	
-//		String body = "SrB: Isso é um teste";
-//		 
-//		Message msg = Message.creator( phoneNumberOrigin, phoneNumberDest, body).create();
-//		
-//		System.out.println(msg.getSid());
+		
+		String phoneNumberOriginStr = "whatsapp:" + wmsgModel.getPhoneNumberOriginStr();
+		String phoneNumberDestStr = "whatsapp:" + wmsgModel.getPhoneNumberDestStr();
+		
+		resposta = "Após a adição do prefixo whatsapp:";
+		
+		PhoneNumber phoneNumberOrigin = new PhoneNumber(phoneNumberOriginStr);
+		PhoneNumber phoneNumberDest = new PhoneNumber(phoneNumberDestStr);
+	
+		String body = "SrB: Isso é um teste";
+		 
+		resposta = "Antes do envio";
+		
+		Message msg = Message.creator( phoneNumberOrigin, phoneNumberDest, body).create();
+		
+		System.out.println(msg.getSid());
+		
+		resposta = "Após do envio";
 		
 		return resposta;	
 	}
