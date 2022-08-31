@@ -2,6 +2,7 @@ package srb.wapp;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,8 +24,8 @@ public class Wapp {
 	}
 	
 	
-	@GetMapping(value = "/enviaMsg")
-	public void enviaMsg(@RequestParam String accountSid, @RequestParam String authToken, 
+	@PostMapping(value = "/enviaMsg")
+	public String enviaMsg(@RequestParam String accountSid, @RequestParam String authToken, 
 			             @RequestParam String phoneNumberOriginStr, @RequestParam String phoneNumberDestStr) {
 		
 		Twilio.init(accountSid, authToken);	
@@ -39,8 +40,34 @@ public class Wapp {
 		 
 		Message msg = Message.creator( phoneNumberOrigin, phoneNumberDest, body).create();
 		
-		System.out.println(msg.getSid());				
+		System.out.println(msg.getSid());
+		
+		return "SrB: sucesso!";
 	}
-
+	
+	
+	
+	
+	@PostMapping(value = "/teste")
+	public String teste(@RequestBody WmsgModel wmsgModel) {
+		
+		Twilio.init(wmsgModel.getAccountSid(), wmsgModel.getAuthToken());	
+		
+		String phoneNumberOriginStr = "whatsapp:" + wmsgModel.getPhoneNumberOriginStr();
+		String phoneNumberDestStr = "whatsapp:" + wmsgModel.getPhoneNumberDestStr();
+		
+		PhoneNumber phoneNumberOrigin = new PhoneNumber(phoneNumberOriginStr);
+		PhoneNumber phoneNumberDest = new PhoneNumber(phoneNumberDestStr);
+	
+		String body = "SrB: Isso é um teste";
+		 
+		Message msg = Message.creator( phoneNumberOrigin, phoneNumberDest, body).create();
+		
+		System.out.println(msg.getSid());
+		
+		return "SrB: sucesso!";	
+	}
+	
+	
 }
 
