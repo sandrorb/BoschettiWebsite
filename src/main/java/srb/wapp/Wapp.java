@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class Wapp {
 	
 	@PostMapping(value = "/wapp")
-	public String resposta(@RequestParam String From) {
-		return "Olá, eu sou um programa Java te respondendo, " + From;
+	public String resposta(@RequestParam String From, @RequestParam String Body) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Olá, " + From + "!");
+		sb.append("Você digitou: " + Body);
+		return sb.toString();
 	}
 
 }
