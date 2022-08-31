@@ -51,8 +51,12 @@ public class Wapp {
 	@PostMapping(value = "/teste")
 	public String teste(@RequestBody WmsgModel wmsgModel) {
 		
-		System.out.println("XXXXXXXXXXXXXXX");
-//		Twilio.init(wmsgModel.getAccountSid(), wmsgModel.getAuthToken());	
+		String resposta = "Antes do init";
+		
+		Twilio.init(wmsgModel.getAccountSid(), wmsgModel.getAuthToken());
+		
+		resposta = "Após o init";
+		
 //		
 //		String phoneNumberOriginStr = "whatsapp:" + wmsgModel.getPhoneNumberOriginStr();
 //		String phoneNumberDestStr = "whatsapp:" + wmsgModel.getPhoneNumberDestStr();
@@ -66,7 +70,7 @@ public class Wapp {
 //		
 //		System.out.println(msg.getSid());
 		
-		return wmsgModel.getAccountSid();	
+		return resposta;	
 	}
 	
 	
