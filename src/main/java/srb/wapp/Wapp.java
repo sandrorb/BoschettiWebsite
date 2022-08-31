@@ -19,37 +19,13 @@ public class Wapp {
 		String numTelefone = From.substring(From.indexOf(":")+1);
 		StringBuilder sb = new StringBuilder();
 		sb.append("Olá, " + numTelefone + "!\n");
-		sb.append("Esta é uma mensagem automática criada e enviada por um webservice escrito em Java por Sandro Boschetti\n");
+		sb.append("Esta é uma mensagem automática criada e enviada por um webservice escrito em Java por Sandro Boschetti.\n");
 		sb.append("Você digitou: " + Body);
 		return sb.toString();
 	}
 	
 	
-	@PostMapping(value = "/enviaMsg")
-	public String enviaMsg(@RequestParam String accountSid, @RequestParam String authToken, 
-			             @RequestParam String phoneNumberOriginStr, @RequestParam String phoneNumberDestStr) {
-		
-		Twilio.init(accountSid, authToken);	
-		
-		phoneNumberOriginStr = "whatsapp:" + phoneNumberOriginStr;
-		  phoneNumberDestStr = "whatsapp:" + phoneNumberDestStr;
-		
-		PhoneNumber phoneNumberOrigin = new PhoneNumber(phoneNumberOriginStr);
-		PhoneNumber phoneNumberDest = new PhoneNumber(phoneNumberDestStr);
-	
-		String body = "SrB: Isso é um teste";
-		 
-		Message msg = Message.creator( phoneNumberOrigin, phoneNumberDest, body).create();
-		
-		System.out.println(msg.getSid());
-		
-		return "SrB: sucesso!";
-	}
-	
-	
-	
-	
-	@PostMapping(value = "/teste")
+	@PostMapping(value = "/sendmsg")
 	public String teste(@RequestBody WmsgModel wmsgModel) {
 		
 		StringBuilder sb = new StringBuilder();
@@ -79,7 +55,7 @@ public class Wapp {
 		try {
 			msg = Message.creator( phoneNumberOrigin, phoneNumberDest, body).create();
 		}catch(ApiException e) {
-			sb.append("ERRO!!!\n");
+			sb.append("ERRO!!!\n\n\n");
 			sb.append(e.toString() + "\n");
 		}
 		
