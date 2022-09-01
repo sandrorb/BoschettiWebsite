@@ -1,6 +1,5 @@
 package srb.wapp;
 
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -53,7 +52,7 @@ public class Wapp {
 		Message msg = null;
 		
 		try {
-			msg = Message.creator( phoneNumberOrigin, phoneNumberDest, body).create();
+			msg = Message.creator( phoneNumberDest, phoneNumberOrigin, body).create();
 		}catch(ApiException e) {
 			sb.append("ERRO!!!\n\n\n");
 			sb.append(e.toString() + "\n");
