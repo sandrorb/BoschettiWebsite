@@ -29,43 +29,26 @@ public class Wapp {
 		
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("Antes do Twilio.init()\n");
-		
 		Twilio.init(wmsgModel.getAccountSid(), wmsgModel.getAuthToken());
-		
-		sb.append("Após o Twilio.init()\n");
 		
 		String phoneNumberOriginStr = "whatsapp:" + wmsgModel.getPhoneNumberOriginStr();
 		String phoneNumberDestStr = "whatsapp:" + wmsgModel.getPhoneNumberDestStr();
 		
-		sb.append("Após a adição do prefixo whatsapp:\n");
-		
 		PhoneNumber phoneNumberOrigin = new PhoneNumber(phoneNumberOriginStr);
 		PhoneNumber phoneNumberDest = new PhoneNumber(phoneNumberDestStr);
-	
-		sb.append("Após a transforação do números de telefone de string para PhoneNumber.\n");
 		
-		String body = "SrB: Isso é um teste";
-		 
-		sb.append("Antes do envio propriamente dito, mas que estã comentado no momento\n\n");
-		
-		Message msg = null;
+		String bodyMsg = wmsgModel.getBodyMsg();
 		
 		try {
-			msg = Message.creator( phoneNumberDest, phoneNumberOrigin, body).create();
+			Message msg = Message.creator( phoneNumberDest, phoneNumberOrigin, bodyMsg).create();
 		}catch(ApiException e) {
-			sb.append("ERRO!!!\n\n\n");
+			sb.append("ERRO!!!\n");
 			sb.append(e.toString() + "\n");
 		}
 		
-//		System.out.println(msg.getSid());
-		
-		sb.append("phoneNumberOrigin = " + phoneNumberOrigin.toString() + "\n");
-		sb.append("phoneNumberDest = " + phoneNumberDest.toString() + "\n");
-		
-		if (msg != null) {
-			sb.append("Mensagem: " + msg.toString() + "\n");
-		}
+		sb.append("  De = " + phoneNumberOrigin.toString() + "\n");
+		sb.append("Para = " + phoneNumberDest.toString() + "\n");
+		sb.append("Mensagem: " + bodyMsg);
 		
 		return sb.toString();	
 	}

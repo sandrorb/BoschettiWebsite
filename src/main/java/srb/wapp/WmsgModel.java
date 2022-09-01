@@ -2,6 +2,12 @@ package srb.wapp;
 
 public class WmsgModel {
 	
+	public String accountSid;
+	public String authToken;
+	public String phoneNumberOriginStr;
+	public String phoneNumberDestStr;
+	public String bodyMsg;
+	
 	public String getAccountSid() {
 		return accountSid;
 	}
@@ -26,9 +32,11 @@ public class WmsgModel {
 	public void setPhoneNumberDestStr(String phoneNumberDestStr) {
 		this.phoneNumberDestStr = phoneNumberDestStr;
 	}
-	public String accountSid;
-	public String authToken;
-	public String phoneNumberOriginStr;
-	public String phoneNumberDestStr;
+	public String getBodyMsg() {
+		return bodyMsg;
+	}
+	public void setBodyMsg(String bodyMsg) {
+		this.bodyMsg = bodyMsg;
+	}
 
 }
