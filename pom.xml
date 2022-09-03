@@ -60,12 +60,6 @@
       		<groupId>org.springframework.boot</groupId>
       		<artifactId>spring-boot-starter-validation</artifactId>
     	</dependency>
-    	
-    	<dependency>
-			<groupId>com.twilio.sdk</groupId>
-			<artifactId>twilio</artifactId>
-			<version>9.0.0-rc.4</version>
-		</dependency>
 
 	</dependencies>
 
