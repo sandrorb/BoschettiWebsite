@@ -1,0 +1,16 @@
+
+#sobre {font-size: 14pt; padding: 5px;}
+#data {font-size: 12pt; padding: 5px;}
+#corpo {margin: auto; margin-top: 2%; margin-bottom: 2%;
+        background-color: #1F618D; width: 80%; border-radius: 10px;
+        padding: 20px;
+        }
+#textoExplicacao {font-size: 12pt; padding: 5px;}
+#assinatura {color: #F39C12}
+#assinaturaBfS {color: whiite; font-size: 12px;}
+
+/* display: inline-block; */
+/*.footer {margin: auto;}
+.footerLeft {width: 20%; background-color: yellow; float: left;}
+.footerRight {width: 20%; background-color: gray; float: right;}*/
+

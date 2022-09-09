@@ -1,9 +1,4 @@
 
-body {text-align: center; color: #F2F3F4; background-color: #283747;
-      font-family:"Calibri";}
-label {color: #EEEEEE;}
-input {border-radius: 6px;}
-
 #cabecalho {margin: auto; margin-top: 5%; text-align: center;
 			color: yellow; background-color: #1F618D;
 			width: 90%; border-radius: 10px;
@@ -13,7 +8,8 @@ input {border-radius: 6px;}
 	        background-color: #1F618D; width: 90%; border-radius: 10px;
 	        padding: 20px; padding-top: 5px; padding-bottom: 30px}
 
-#sobre {}
+#input {border-radius: 5px}	 /*do projetinho 1*/
+
 #id {background-color: #A9A9A9; width: 100px; text-align: center}
 
 #nome {width: 200px; text-align: center}
@@ -32,5 +28,6 @@ td {background-color: #191970; color: #CCCCCC; padding: 1px 10px;}
                 background-color: #800000; color: #A9A9A9;}
 
 .buttonsalvarnovo {margin: 0px 5px; padding: 2px 10px;}
+
 
 
