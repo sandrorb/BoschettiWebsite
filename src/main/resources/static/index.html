@@ -32,13 +32,13 @@
   		<div id="sobre">
   		A Boschetti Física em Saúde Ltda. é uma empresa que está no mercado desde 1995
   		prestando serviços de proteção radiológica e física médica em medicina nuclear e de tecnologia
-  		da informação.
+  		da informação. <p>
+  		<div id="data-hora"></div>
   		</div>
   		
   		<hr>
   		
     	<h3>Futuro Projeto Java</h3>
-    	<div id="data"></div>
 
 		<div id="textoExplicacao">
 			Este é um projeto sendo implementado com a finalidade de ser apresentado como portifólio.
@@ -79,21 +79,29 @@
 	<!-- Importação do Bootstrap além da que está no head -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
-	<script>
-		function data(){
-		    var now = new Date(),
-	        dia  = now.getDate().toString(),
-	        diaF = (dia.length == 1) ? '0'+dia : dia,
-	        mes  = (now.getMonth()+1).toString(), //+1 pois no getMonth Janeiro começa com zero.
-	        mesF = (mes.length == 1) ? '0'+mes : mes,
-	        anoF = now.getFullYear();
-		    hora = now.getHours().toString();
-		    horaF = (hora.length == 1) ? '0'+hora : hora;
-		    min = now.getMinutes().toString();
-		    minF = (min.length == 1) ? '0'+min : min;
-			$("#data").text(diaF + "/" + mesF + "/" + anoF + " " + horaF + ":" + minF);
-		}
-	</script>
+<!-- Início data e hora em tempo real -->    	
+		<script>
+			// Função para formatar 1 em 01
+			const zeroFill = n => {
+				return ('0' + n).slice(-2);
+			}
+
+			// Cria intervalo
+			const interval = setInterval(() => {
+				// Pega o horário atual
+				const now = new Date();
+
+				// Formata a data conforme dd/mm/aaaa hh:ii:ss
+				const dataHora = zeroFill(now.getUTCDate()) + '/' + zeroFill((now.getMonth() + 1)) + '/' + 
+				                          now.getFullYear() + ' ' + zeroFill(now.getHours()) + ':' + 
+				                          zeroFill(now.getMinutes()) + ':' + zeroFill(now.getSeconds());
+
+				// Exibe na tela usando a div#data-hora
+				document.getElementById('data-hora').innerHTML = dataHora;
+			}, 1000);
+		</script>
+<!-- Fim data e hora em tempo real -->
+
 
   </body>
 </html>

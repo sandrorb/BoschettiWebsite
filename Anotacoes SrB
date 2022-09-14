@@ -37,3 +37,21 @@ spring.database.driverClassName=org.postgresql.Driver
 spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
 spring.datasource.username=postgres
 spring.datasource.password=admin
+
+
+
+	<script>
+		function data(){
+		    var now = new Date(),
+	        dia  = now.getDate().toString(),
+	        diaF = (dia.length == 1) ? '0'+dia : dia,
+	        mes  = (now.getMonth()+1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+	        mesF = (mes.length == 1) ? '0'+mes : mes,
+	        anoF = now.getFullYear();
+		    hora = now.getHours().toString();
+		    horaF = (hora.length == 1) ? '0'+hora : hora;
+		    min = now.getMinutes().toString();
+		    minF = (min.length == 1) ? '0'+min : min;
+			$("#data").text(diaF + "/" + mesF + "/" + anoF + " " + horaF + ":" + minF);
+		}
+	</script>
