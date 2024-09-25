@@ -5,7 +5,7 @@
         background-color: #1F618D; border-radius: 10px; width: 900px; max-width: 80%; 
         padding: 20px;
         }
-#textoExplicacao {font-size: 12pt; padding: 5px;}
+#textoExplicacao {font-size: 12pt; padding: 5px; }
 #assinatura {color: #F39C12}
 #assinaturaBfS {color: whiite; font-size: 12px;}
 
@@ -17,5 +17,7 @@
 
 #advertencia {font-size: 30pt; padding: 5px; color: orange;}
 #titulo {font-size: 26pt; padding: 5px; color: white;}
-#subtitulo {font-size: 18pt; padding: 5px; color: LightGray;}
+#subtitulo {font-size: 18pt; padding: 5px; color: #c0c0c0;}
+#textoExplicacao1 {font-size: 12pt; padding: 5px; text-align: justify;}
 #textoExplicacao2 {font-size: 12pt; padding: 5px; text-align: left;}
+ol{color: LightGray;}
