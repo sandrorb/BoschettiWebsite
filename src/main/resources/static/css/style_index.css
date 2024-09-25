@@ -14,3 +14,7 @@
 .footerLeft {width: 20%; background-color: yellow; float: left;}
 .footerRight {width: 20%; background-color: gray; float: right;}*/
 
+
+#titulo {font-size: 26pt; padding: 5px; color: white;}
+#subtitulo {font-size: 18pt; padding: 5px; color: LightGray;}
+#textoExplicacao2 {font-size: 12pt; padding: 5px; text-align: left;}
