@@ -15,9 +15,13 @@
 .footerRight {width: 20%; background-color: gray; float: right;}*/
 
 
-#advertencia {font-size: 30pt; padding: 5px; color: orange;}
-#titulo {font-size: 26pt; padding: 5px; color: white;}
+#advertencia {display: none; font-size: 30pt; padding: 5px; color: orange;}
+#titulo {font-size: 26pt; padding: 5px; color: orange;}
 #subtitulo {font-size: 18pt; padding: 5px; color: #c0c0c0;}
 #textoExplicacao1 {font-size: 12pt; padding: 5px; text-align: justify;}
 #textoExplicacao2 {font-size: 12pt; padding: 5px; text-align: left;}
 ul{color: LightGray;}
+
+li::marker {
+  color: orange;
+}
