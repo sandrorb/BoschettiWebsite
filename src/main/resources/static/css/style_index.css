@@ -7,7 +7,7 @@
         }
 #textoExplicacao {font-size: 12pt; padding: 5px; }
 #assinatura {color: #F39C12}
-#assinaturaBfS {color: white; font-size: 12px;}
+#assinaturaBfS {color: white; font-size: 12pt;}
 
 /* display: inline-block; */
 /*.footer {margin: auto;}
@@ -28,6 +28,6 @@ li::marker {
   color: orange;
 }
 
-#links {margin: auto; padding: 0px; font-size: 12px;}
+#links {border: 1px solid gray; border-radius: 5px; padding: 5px; margin-top: 20px; font-size: 10pt; }
 
 
