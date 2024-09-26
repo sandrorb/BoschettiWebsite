@@ -3,17 +3,19 @@
 #data {font-size: 12pt; padding: 5px;}
 #corpo {margin: auto; margin-top: 2%; margin-bottom: 2%;
         background-color: #1F618D; border-radius: 10px; width: 900px; max-width: 80%; 
-        padding: 20px;
+        padding: 40px;
         }
 #textoExplicacao {font-size: 12pt; padding: 5px; }
 #assinatura {color: #F39C12}
-#assinaturaBfS {color: whiite; font-size: 12px;}
+#assinaturaBfS {color: white; font-size: 12px;}
 
 /* display: inline-block; */
 /*.footer {margin: auto;}
 .footerLeft {width: 20%; background-color: yellow; float: left;}
 .footerRight {width: 20%; background-color: gray; float: right;}*/
 
+
+#rodape {border: 1px solid gray; border-radius: 5px; padding: 5px; }
 
 #advertencia {display: none; font-size: 30pt; padding: 5px; color: orange;}
 #titulo {font-size: 26pt; padding: 5px; color: orange;}
@@ -25,3 +27,7 @@ ul{color: LightGray;}
 li::marker {
   color: orange;
 }
+
+#links {margin: auto; padding: 0px; font-size: 12px;}
+
+
