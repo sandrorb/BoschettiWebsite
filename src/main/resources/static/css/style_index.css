@@ -28,6 +28,12 @@ li::marker {
   color: orange;
 }
 
-#links {border: 1px solid gray; border-radius: 5px; padding: 5px; margin-top: 20px; font-size: 10pt; }
+#links {border: 1px solid gray; border-radius: 5px; padding: 5px;
+        margin-top: 20px; margin-bottom: 20px; font-size: 10pt; }
+
+#resultados {font-size: 12pt; padding: 5px; text-align: center; padding-bottom: 15px; padding-top: 15px;}
+
+#subtituloResultados {font-size: 20pt;}
+#explicacaoResultado {font-size: 12pt; text-align: justify;}
 
 
