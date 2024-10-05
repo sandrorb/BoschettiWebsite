@@ -6,7 +6,7 @@
         padding: 40px;
         }
 #textoExplicacao {font-size: 12pt; padding: 5px; }
-#assinatura {color: #F39C12}
+#assinatura {color:#40E0D0}
 #assinaturaBfS {color: white; font-size: 12pt;}
 
 /* display: inline-block; */
@@ -18,7 +18,7 @@
 #rodape {border: 1px solid gray; border-radius: 5px; padding: 5px; }
 
 #advertencia {display: none; font-size: 30pt; padding: 5px; color: orange;}
-#titulo {font-size: 26pt; padding: 5px; color: orange;}
+#titulo {font-size: 26pt; padding: 5px; color: #40E0D0}
 #subtitulo {font-size: 18pt; padding: 5px; color: #c0c0c0;}
 #textoExplicacao1 {font-size: 12pt; padding: 5px; text-align: justify; padding-bottom: 15px; padding-top: 15px;}
 #textoExplicacao2 {font-size: 12pt; padding: 5px; text-align: left;}
