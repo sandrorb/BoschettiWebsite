@@ -15,7 +15,7 @@
 .footerRight {width: 20%; background-color: gray; float: right;}*/
 
 #textoIntroducao {text-align: justify; margin-top: 20px;}
-#textoCaracteristicas {text-align: left; margin-top: 20px;}
+#textoCaracteristicas {text-align: left; margin-top: 20px; text-align: justify;}
 ul{color: LightGray;}
 
 #textoPalavrasFinais {text-align: justify;}
@@ -29,6 +29,9 @@ li::marker {
 #resultados {text-align: center; margin-top: 40px;}
 #subtituloResultados {font-size: 20pt;}
 #explicacaoResultado {text-align: justify;}
+#resultadoImg {margin-top: 10px;}
+img {border-radius: 20px; width: 70%;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);}
 
 
 #rodape {border: 1px solid gray; border-radius: 5px; margin-top: 40px; padding: 5px; text-align: center;}
