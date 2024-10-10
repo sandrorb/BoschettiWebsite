@@ -24,7 +24,7 @@ li::marker {
   color: orange;
 }
 
-#links {border: 1px solid gray; border-radius: 5px; padding: 5px; font-size: 10pt; text-align: center;}
+#links {margin-top: 50px; border: 1px solid gray; border-radius: 5px; padding: 5px; font-size: 10pt; text-align: center;}
 
 #resultados {text-align: center; margin-top: 40px;}
 #subtituloResultados {font-size: 20pt;}
