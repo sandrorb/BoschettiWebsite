@@ -1,39 +1,38 @@
 
-#sobre {font-size: 14pt; padding: 5px;}
 #data {font-size: 12pt; padding: 5px;}
-#corpo {margin: auto; margin-top: 2%; margin-bottom: 2%;
-        background-color: #1F618D; border-radius: 10px; width: 900px; max-width: 80%; 
-        padding: 40px;
-        }
-#textoExplicacao {font-size: 12pt; padding: 5px; }
-#assinatura {color:#40E0D0}
-#assinaturaBfS {color: white; font-size: 12pt;}
+#corpo {font-size: 12pt; margin: auto; margin-top: 2%; margin-bottom: 2%;
+               background-color: #1F618D; border-radius: 10px; width: 900px; max-width: 80%; 
+               padding: 60px; text-align: justify;}
+#advertencia {display: none; font-size: 30pt; color: orange;}
+
+#titulo {font-size: 26pt; color: #40E0D0; text-align: center;}
+#subtitulo {font-size: 18pt; color: #c0c0c0; margin-top: 10px; text-align: center;}   
+#boasvindas {font-size: 14pt; margin-top: 10px; text-align: center;}
 
 /* display: inline-block; */
 /*.footer {margin: auto;}
 .footerLeft {width: 20%; background-color: yellow; float: left;}
 .footerRight {width: 20%; background-color: gray; float: right;}*/
 
-
-#rodape {border: 1px solid gray; border-radius: 5px; padding: 5px; }
-
-#advertencia {display: none; font-size: 30pt; padding: 5px; color: orange;}
-#titulo {font-size: 26pt; padding: 5px; color: #40E0D0}
-#subtitulo {font-size: 18pt; padding: 5px; color: #c0c0c0;}
-#textoExplicacao1 {font-size: 12pt; padding: 5px; text-align: justify; padding-bottom: 15px; padding-top: 15px;}
-#textoExplicacao2 {font-size: 12pt; padding: 5px; text-align: left;}
+#textoIntroducao {text-align: justify; margin-top: 20px;}
+#textoCaracteristicas {text-align: left; margin-top: 20px;}
 ul{color: LightGray;}
+
+#textoPalavrasFinais {text-align: justify;}
 
 li::marker {
   color: orange;
 }
 
-#links {border: 1px solid gray; border-radius: 5px; padding: 5px;
-        margin-top: 20px; margin-bottom: 20px; font-size: 10pt; }
+#links {border: 1px solid gray; border-radius: 5px; padding: 5px; font-size: 10pt; text-align: center;}
 
-#resultados {font-size: 12pt; padding: 5px; text-align: center; padding-bottom: 15px; padding-top: 15px;}
-
+#resultados {text-align: center; margin-top: 40px;}
 #subtituloResultados {font-size: 20pt;}
-#explicacaoResultado {font-size: 12pt; text-align: justify;}
+#explicacaoResultado {text-align: justify;}
+
+
+#rodape {border: 1px solid gray; border-radius: 5px; margin-top: 40px; padding: 5px; text-align: center;}
+#assinatura {color:#40E0D0}
+#assinaturaBfS {color: white; font-size: 10pt;}
 
 
