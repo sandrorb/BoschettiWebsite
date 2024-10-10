@@ -30,12 +30,17 @@ li::marker {
 #subtituloResultados {font-size: 20pt;}
 #explicacaoResultado {text-align: justify;}
 #resultadoImg {margin-top: 10px;}
-img {border-radius: 20px; width: 70%;
+#resultadoImg img {border-radius: 20px; width: 70%;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);}
 
+/*border: 1px solid gray; border-radius: 5px;*/
+#rodape {margin-top: 40px; padding: 5px; text-align: center; border: 1px solid gray;}
+	#rodapeImg { max-width: 10%; min-height: 100px; border: 1px; float: left;
+		  display: flex; align-items: center; justify-content: center;}
+		#rodapeImg img {width: 100%; border-radius: 5px; }
+	#rodapeAss {min-height: 100px; border: 1px; padding: 10px;}
+		#assinatura {color:#40E0D0; }
+		#assinaturaBfS {color: white; font-size: 10pt;}
 
-#rodape {border: 1px solid gray; border-radius: 5px; margin-top: 40px; padding: 5px; text-align: center;}
-#assinatura {color:#40E0D0}
-#assinaturaBfS {color: white; font-size: 10pt;}
 
 
